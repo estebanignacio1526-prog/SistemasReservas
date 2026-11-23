@@ -1,0 +1,277 @@
+<!-- BANNER PRINCIPAL INSTITUCIONAL -->
+<div style="background-color: #6802C1; color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); margin-bottom: 30px; font-family: 'Helvetica Neue', Arial, sans-serif;">
+    <h1 style="color: #ffffff; margin: 0 0 10px 0; font-size: 26px; font-weight: bold; border-bottom: 2px solid #63AEE6; padding-bottom: 10px;">
+        Guía Pedagógica y Práctica: Historias de Usuario y Gherkin
+    </h1>
+    <p style="margin: 0; font-size: 15px; opacity: 0.95; line-height: 1.5;">
+        Instructivo metodológico, marco conceptual INVEST/BDD y especificación práctica aplicada al módulo de Checkout de Mercado Libre.
+    </p>
+</div>
+
+<!-- CONTENEDOR GENERAL DE CONTENIDO -->
+<div style="font-family: Arial, sans-serif; color: #212322; line-height: 1.6; margin-bottom: 20px;">
+
+    <!-- SECCIÓN 1: MARCO TEÓRICO -->
+    <h2 style="color: #6802C1; border-bottom: 2px solid #E9ECEF; padding-bottom: 8px; margin-top: 30px; font-size: 20px; font-weight: bold;">
+        1. Marco Teórico y Conceptual
+    </h2>
+    <p style="margin-bottom: 15px; color: #212322;">
+        En el desarrollo ágil de software, las <strong>Historias de Usuario (HU)</strong> actúan como un vehículo de comunicación directo entre el equipo de negocio y el equipo técnico. Para garantizar su calidad, deben cumplir estrictamente con el acrónimo <strong>INVEST</strong>:
+    </p>
+
+    <!-- TARJETA INVEST & BDD -->
+    <div style="background-color: #F8F9FA; border-left: 6px solid #6802C1; padding: 20px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin: 20px 0;">
+        <h3 style="color: #6802C1; margin-top: 0; font-size: 16px; font-weight: bold;">💡 Principios Criterio INVEST</h3>
+        <ul style="margin: 10px 0 15px 0; padding-left: 20px; color: #333333;">
+            <li style="margin-bottom: 6px;"><strong>I - Independent (Independiente):</strong> Evitar acoplamientos entre historias para permitir entregas modulares.</li>
+            <li style="margin-bottom: 6px;"><strong>N - Negotiable (Negociable):</strong> Centrada en el "qué" y no en el "cómo", abierta al diálogo técnico.</li>
+            <li style="margin-bottom: 6px;"><strong>V - Valuable (Valiosa):</strong> Debe aportar un valor claro y directo al usuario o al negocio.</li>
+            <li style="margin-bottom: 6px;"><strong>E - Estimable (Estimable):</strong> Su alcance debe ser claro para permitir una estimación de esfuerzo razonable.</li>
+            <li style="margin-bottom: 6px;"><strong>S - Small (Pequeña):</strong> Adecuada en dimensión para completarse dentro de un solo sprint.</li>
+            <li style="margin-bottom: 0;"><strong>T - Testable (Testeable):</strong> Debe contar con criterios de aceptación objetivos para su verificación.</li>
+        </ul>
+        <p style="margin: 10px 0 0 0; color: #212322; font-size: 14px;">
+            Para operacionalizar la verificabilidad (<strong>Testable</strong>), se adopta <strong>BDD (Behavior-Driven Development)</strong> mediante el lenguaje <strong>Gherkin</strong> (<code>Dado que</code>, <code>Cuando</code>, <code>Entonces</code>), estandarizando el comportamiento esperado en un formato comprensible tanto para personas de negocio como para desarrollo y QA.
+        </p>
+    </div>
+
+    <hr style="border: none; border-top: 1px solid #E9ECEF; margin: 30px 0;" />
+
+    <!-- SECCIÓN 2: INSTRUCTIVO DE REGISTRO -->
+    <h2 style="color: #6802C1; border-bottom: 2px solid #E9ECEF; padding-bottom: 8px; margin-top: 30px; font-size: 20px; font-weight: bold;">
+        2. Instructivo de Registro Normativo
+    </h2>
+
+    <!-- TABLA 2.1 -->
+    <h3 style="color: #0202C6; margin-top: 20px; font-size: 16px; font-weight: bold;">2.1 Componentes de la Historia de Usuario</h3>
+    <div style="overflow-x: auto; margin-bottom: 25px;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; margin-top: 10px;">
+            <thead>
+                <tr style="background-color: #6802C1; color: #ffffff;">
+                    <th style="padding: 10px; border: 1px solid #6802C1; width: 25%;">Columna</th>
+                    <th style="padding: 10px; border: 1px solid #6802C1;">Instrucciones de Redacción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: #FFFFFF; border-bottom: 1px solid #E9ECEF;">
+                    <td style="padding: 10px; border: 1px solid #E9ECEF; font-weight: bold;">Identificador (ID) de la historia</td>
+                    <td style="padding: 10px; border: 1px solid #E9ECEF;">Código único estandarizado que identifica unívocamente la historia en el backlog (ej. <code>HU-001</code>, <code>HU-CHECKOUT-02</code>).</td>
+                </tr>
+                <tr style="background-color: #F8F9FA; border-bottom: 1px solid #E9ECEF;">
+                    <td style="padding: 10px; border: 1px solid #E9ECEF; font-weight: bold;">Rol</td>
+                    <td style="padding: 10px; border: 1px solid #E9ECEF;">Especifica el perfil de usuario o actor que interactúa con la funcionalidad. Debe evitarse la ambigüedad (ej. "Yo como comprador registrado" en lugar de "como usuario").</td>
+                </tr>
+                <tr style="background-color: #FFFFFF; border-bottom: 1px solid #E9ECEF;">
+                    <td style="padding: 10px; border: 1px solid #E9ECEF; font-weight: bold;">Característica / Funcionalidad</td>
+                    <td style="padding: 10px; border: 1px solid #E9ECEF;">Expresa la acción o necesidad que el rol ejecuta en el sistema mediante verbos de acción ("quiero consultar", "necesito filtrar", "puedo seleccionar").</td>
+                </tr>
+                <tr style="background-color: #F8F9FA; border-bottom: 1px solid #E9ECEF;">
+                    <td style="padding: 10px; border: 1px solid #E9ECEF; font-weight: bold;">Razón / Resultado</td>
+                    <td style="padding: 10px; border: 1px solid #E9ECEF;">Describe el beneficio directo, meta o valor de negocio que justifica la implementación de la característica ("Para poder [beneficio/meta]").</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- TABLA 2.2 -->
+    <h3 style="color: #0202C6; margin-top: 20px; font-size: 16px; font-weight: bold;">2.2 Componentes de los Criterios de Aceptación (Sintaxis Gherkin)</h3>
+    <div style="overflow-x: auto; margin-bottom: 25px;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; margin-top: 10px;">
+            <thead>
+                <tr style="background-color: #6802C1; color: #ffffff;">
+                    <th style="padding: 10px; border: 1px solid #6802C1; width: 25%;">Columna</th>
+                    <th style="padding: 10px; border: 1px solid #6802C1;">Instrucciones y Definición Técnica</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: #FFFFFF; border-bottom: 1px solid #E9ECEF;">
+                    <td style="padding: 10px; border: 1px solid #E9ECEF; font-weight: bold;">Número (#) de Escenario</td>
+                    <td style="padding: 10px; border: 1px solid #E9ECEF;">Secuencial numérico estructurado que identifica cada caso de prueba (ej. Escenario 1, Escenario 2).</td>
+                </tr>
+                <tr style="background-color: #F8F9FA; border-bottom: 1px solid #E9ECEF;">
+                    <td style="padding: 10px; border: 1px solid #E9ECEF; font-weight: bold;">Scenario (Escenario)</td>
+                    <td style="padding: 10px; border: 1px solid #E9ECEF;">Título descriptivo y concreto que resume el propósito del caso de uso evaluado (ej. <em>Compra exitosa con tarjeta de crédito</em>).</td>
+                </tr>
+                <tr style="background-color: #FFFFFF; border-bottom: 1px solid #E9ECEF;">
+                    <td style="padding: 10px; border: 1px solid #E9ECEF; font-weight: bold;">Given (Dado / Dado que)</td>
+                    <td style="padding: 10px; border: 1px solid #E9ECEF;">Define la precondición o el contexto inicial indispensable antes de ejecutar cualquier interacción.</td>
+                </tr>
+                <tr style="background-color: #F8F9FA; border-bottom: 1px solid #E9ECEF;">
+                    <td style="padding: 10px; border: 1px solid #E9ECEF; font-weight: bold;">When (Cuando)</td>
+                    <td style="padding: 10px; border: 1px solid #E9ECEF;">Especifica la acción del usuario, el evento de entrada o el estímulo ejecutado en la interfaz/sistema.</td>
+                </tr>
+                <tr style="background-color: #FFFFFF; border-bottom: 1px solid #E9ECEF;">
+                    <td style="padding: 10px; border: 1px solid #E9ECEF; font-weight: bold;">Then (Entonces)</td>
+                    <td style="padding: 10px; border: 1px solid #E9ECEF;">Detalla las consecuencias observables, cambios de estado, almacenamiento de datos o mensajes de respuesta devueltos.</td>
+                </tr>
+                <tr style="background-color: #F8F9FA; border-bottom: 1px solid #E9ECEF;">
+                    <td style="padding: 10px; border: 1px solid #E9ECEF; font-weight: bold;">And / But (Y / Pero)</td>
+                    <td style="padding: 10px; border: 1px solid #E9ECEF;">Conectores lógicos opcionales utilizados para encadenar múltiples precondiciones, acciones o resultados sin repetir palabras clave.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr style="border: none; border-top: 1px solid #E9ECEF; margin: 30px 0;" />
+
+    <!-- SECCIÓN 3: EJEMPLO PRÁCTICO INTEGRAL -->
+    <h2 style="color: #6802C1; border-bottom: 2px solid #E9ECEF; padding-bottom: 8px; margin-top: 30px; font-size: 20px; font-weight: bold;">
+        3. Ejemplo Práctico Integral: Módulo de Compras en Mercado Libre
+    </h2>
+
+    <!-- HISTORIA DE USUARIO 1 -->
+    <div style="background-color: #FFFFFF; border: 1px solid #E9ECEF; border-radius: 6px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.03);">
+        <h3 style="color: #0202C6; margin-top: 0; font-size: 18px; font-weight: bold;">
+            Historia de Usuario 1: HU-01 - Búsqueda y filtrado de productos en el catálogo
+        </h3>
+        <p style="margin: 5px 0 15px 0; font-size: 13px; color: #63AEE6; font-weight: bold;">
+            📁 Estructura del Formulario
+        </p>
+
+        <ul style="margin: 0 0 15px 0; padding-left: 20px; color: #333333;">
+            <li><strong>ID:</strong> HU-01</li>
+            <li><strong>Rol:</strong> Como comprador registrado</li>
+            <li><strong>Funcionalidad:</strong> Quiero buscar productos mediante términos clave y aplicar filtros de precio y modalidad de envío</li>
+            <li><strong>Razón / Resultado:</strong> Para encontrar rápidamente artículos relevantes que se ajusten a mi presupuesto y requerimientos de entrega.</li>
+        </ul>
+
+        <div style="background-color: #212322; color: #F8F9FA; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 13px; overflow-x: auto;">
+            <div style="color: #63AEE6; font-weight: bold; margin-bottom: 8px;">### Criterios de Aceptación en Sintaxis Gherkin (HU-01)</div>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 1: Camino Feliz (Happy Path)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador se encuentra en la página principal de Mercado Libre</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> ingresa "auriculares inalámbricos" en el buscador, aplica el filtro "Envío gratis" y define un rango de precio entre 50 y 150 USD</p>
+            <p style="margin: 0 0 10px 0;"><span style="color: #00E676;">ENTONCES</span> el sistema despliega un listado de productos que coinciden con el término de búsqueda y cumplen simultáneamente con el filtro de precio y envío sin costo.</p>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 2: Flujo Alternativo (Alternative Path)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador ha ejecutado una búsqueda de "auriculares inalámbricos"</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> selecciona la opción de ordenamiento "Menor precio"</p>
+            <p style="margin: 0 0 10px 0;"><span style="color: #00E676;">ENTONCES</span> el sistema reorganiza la lista de resultados mostrando los artículos de menor a mayor costo de manera ascendente.</p>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 3: Manejo de Errores (Error Path)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador está configurando el filtro de rango de precios</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> ingresa un precio mínimo de 200 USD y un precio máximo de 50 USD</p>
+            <p style="margin: 0 0 10px 0;"><span style="color: #00E676;">ENTONCES</span> el sistema muestra la alerta "El precio mínimo no puede ser mayor al precio máximo" y deshabilita el botón de aplicación de filtros.</p>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 4: Caso de Borde (Edge Case)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador busca un código de producto alfanumérico inexistente ("X-999-NOTFOUND")</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> presiona la tecla de búsqueda</p>
+            <p style="margin: 0;"><span style="color: #00E676;">ENTONCES</span> el sistema muestra la pantalla informativa "No encontramos resultados para tu búsqueda" junto con una lista de categorías recomendadas.</p>
+        </div>
+    </div>
+
+    <!-- HISTORIA DE USUARIO 2 -->
+    <div style="background-color: #FFFFFF; border: 1px solid #E9ECEF; border-radius: 6px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.03);">
+        <h3 style="color: #0202C6; margin-top: 0; font-size: 18px; font-weight: bold;">
+            Historia de Usuario 2: HU-02 - Gestión e incorporación de productos al carrito de compras
+        </h3>
+        <p style="margin: 5px 0 15px 0; font-size: 13px; color: #63AEE6; font-weight: bold;">
+            📁 Estructura del Formulario
+        </p>
+
+        <ul style="margin: 0 0 15px 0; padding-left: 20px; color: #333333;">
+            <li><strong>ID:</strong> HU-02</li>
+            <li><strong>Rol:</strong> Como comprador registrado</li>
+            <li><strong>Funcionalidad:</strong> Quiero agregar artículos seleccionados con una cantidad específica al carrito de compras</li>
+            <li><strong>Razón / Resultado:</strong> Para consolidar los productos que deseo adquirir en una sola orden de compra.</li>
+        </ul>
+
+        <div style="background-color: #212322; color: #F8F9FA; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 13px; overflow-x: auto;">
+            <div style="color: #63AEE6; font-weight: bold; margin-bottom: 8px;">### Criterios de Aceptación en Sintaxis Gherkin (HU-02)</div>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 1: Camino Feliz (Happy Path)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador está en la página de detalle de un producto con stock disponible de 10 unidades</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> selecciona la cantidad de 2 unidades y hace clic en "Agregar al carrito"</p>
+            <p style="margin: 0 0 10px 0;"><span style="color: #00E676;">ENTONCES</span> el sistema añade las 2 unidades al carrito, actualiza el indicador numérico del icono del carrito y despliega la confirmación flotante.</p>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 2: Flujo Alternativo (Alternative Path)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador posee 2 productos dentro de su carrito de compras</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> accede a la vista de su carrito y hace clic en la opción "Eliminar" de uno de los artículos</p>
+            <p style="margin: 0 0 10px 0;"><span style="color: #00E676;">ENTONCES</span> el sistema remueve dicho producto de la lista y recalcula de forma automática el monto subtotal del carrito.</p>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 3: Manejo de Errores (Error Path)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador se encuentra en la ficha técnica del producto seleccionado</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> intenta ingresar manualmente un valor de cantidad negativo ("-2") o cero ("0")</p>
+            <p style="margin: 0 0 10px 0;"><span style="color: #00E676;">ENTONCES</span> el sistema restaura el valor del campo a 1 y muestra la advertencia "La cantidad mínima requerida es 1 unidad".</p>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 4: Caso de Borde (Edge Case)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el producto seleccionado cuenta únicamente con 1 unidad disponible en inventario</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> el comprador intenta seleccionar 2 unidades dentro de la ficha de detalle</p>
+            <p style="margin: 0;"><span style="color: #00E676;">ENTONCES</span> el sistema deshabilita el selector de incremento, muestra el mensaje "¡Última unidad disponible!" y limita la selección a 1 unidad.</p>
+        </div>
+    </div>
+
+    <!-- HISTORIA DE USUARIO 3 -->
+    <div style="background-color: #FFFFFF; border: 1px solid #E9ECEF; border-radius: 6px; padding: 20px; margin-bottom: 25px; box-shadow: 0 2px 4px rgba(0,0,0,0.03);">
+        <h3 style="color: #0202C6; margin-top: 0; font-size: 18px; font-weight: bold;">
+            Historia de Usuario 3: HU-03 - Procesamiento y confirmación de pago de la orden
+        </h3>
+        <p style="margin: 5px 0 15px 0; font-size: 13px; color: #63AEE6; font-weight: bold;">
+            📁 Estructura del Formulario
+        </p>
+
+        <ul style="margin: 0 0 15px 0; padding-left: 20px; color: #333333;">
+            <li><strong>ID:</strong> HU-03</li>
+            <li><strong>Rol:</strong> Como comprador registrado</li>
+            <li><strong>Funcionalidad:</strong> Quiero procesar el pago de mi carrito de compras utilizando una tarjeta de crédito o saldo disponible</li>
+            <li><strong>Razón / Resultado:</strong> Para completar la transacción de compra y autorizar la entrega de los productos.</li>
+        </ul>
+
+        <div style="background-color: #212322; color: #F8F9FA; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 13px; overflow-x: auto;">
+            <div style="color: #63AEE6; font-weight: bold; margin-bottom: 8px;">### Criterios de Aceptación en Sintaxis Gherkin (HU-03)</div>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 1: Camino Feliz (Happy Path)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador tiene un carrito con productos, ha seleccionado su dirección de envío e ingresó una tarjeta de crédito válida con fondos suficientes</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> presiona el botón "Pagar"</p>
+            <p style="margin: 0 0 10px 0;"><span style="color: #00E676;">ENTONCES</span> el sistema aprueba la transacción, genera un identificador único de orden, descuenta el stock de la base de datos y envía el comprobante al correo registrado.</p>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 2: Flujo Alternativo (Alternative Path)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador se encuentra en el checkout de la compra</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> selecciona como medio de pago "Dinero disponible en Mercado Pago" con saldo suficiente y confirma la operación</p>
+            <p style="margin: 0 0 10px 0;"><span style="color: #00E676;">ENTONCES</span> el sistema debita el monto directamente de su cuenta y emite la confirmación de la orden de forma inmediata.</p>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 3: Manejo de Errores (Error Path)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador efectúa el pago con una tarjeta de crédito que ha superado su límite de crédito</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> confirma el intento de pago</p>
+            <p style="margin: 0 0 10px 0;"><span style="color: #00E676;">ENTONCES</span> el sistema rechaza la transacción y muestra el mensaje "Pago rechazado por el emisor. Por favor intenta con otro medio de pago".</p>
+
+            <p style="margin: 10px 0 2px 0; color: #FFD166;"># Escenario 4: Caso de Borde (Edge Case)</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">DADO QUE</span> el comprador permanece inactivo en la pantalla de revisión de pago durante más de 15 minutos</p>
+            <p style="margin: 0 0 2px 0;"><span style="color: #00E676;">CUANDO</span> intenta hacer clic en el botón "Pagar" una vez expirado el tiempo de reserva</p>
+            <p style="margin: 0;"><span style="color: #00E676;">ENTONCES</span> el sistema cancela la sesión de checkout, invalida la orden temporal y redirige al carrito con la notificación "Tu sesión ha expirado por inactividad. Revisa la disponibilidad actual de tus productos".</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 4: CHECKLIST DE VALIDACIÓN -->
+    <h2 style="color: #6802C1; border-bottom: 2px solid #E9ECEF; padding-bottom: 8px; margin-top: 30px; font-size: 20px; font-weight: bold;">
+        4. Checklist de Validación para el Estudiante
+    </h2>
+
+    <div style="background-color: #F8F9FA; border-left: 6px solid #0202C6; padding: 20px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin: 20px 0;">
+        <h3 style="color: #0202C6; margin-top: 0; font-size: 16px; font-weight: bold;">☑ Lista de Cotejo de Calidad de Historias</h3>
+        <ul style="margin: 10px 0 0 0; padding-left: 20px; color: #333333; list-style-type: none;">
+            <li style="margin-bottom: 8px;">
+                <input type="checkbox" disabled checked> <strong>Independencia funcional:</strong> ¿La Historia de Usuario se puede desarrollar sin depender de historias del mismo sprint?
+            </li>
+            <li style="margin-bottom: 8px;">
+                <input type="checkbox" disabled checked> <strong>Formato de rol/deseo/beneficio:</strong> ¿Utiliza una estructura clara que especifique el <em>Rol</em>, la <em>Funcionalidad</em> y el <em>Valor de Negocio</em>?
+            </li>
+            <li style="margin-bottom: 8px;">
+                <input type="checkbox" disabled checked> <strong>Cumplimiento de Sintaxis Gherkin:</strong> ¿Cada criterio de aceptación emplea correctamente las cláusulas <strong>Dado que</strong> (contexto), <strong>Cuando</strong> (acción) y <strong>Entonces</strong> (resultado)?
+            </li>
+            <li style="margin-bottom: 8px;">
+                <input type="checkbox" disabled checked> <strong>Cobertura integral de pruebas:</strong> ¿Cada Historia incluye los 4 escenarios obligatorios?
+                <ul style="margin-top: 4px; padding-left: 20px;">
+                    <li>✓ Camino Feliz (Happy Path)</li>
+                    <li>✓ Flujo Alternativo</li>
+                    <li>✓ Manejo de Errores</li>
+                    <li>✓ Caso de Borde / Límites</li>
+                </ul>
+            </li>
+            <li style="margin-bottom: 0;">
+                <input type="checkbox" disabled checked> <strong>Ausencia de ambigüedad técnica:</strong> ¿Los resultados en las cláusulas <em>Entonces</em> son verificables y evaluables de manera objetiva por el equipo de QA?
+            </li>
+        </ul>
+    </div>
+
+</div>
